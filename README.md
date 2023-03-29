@@ -1,34 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Sending Letters to Future README
 
-## Getting Started
+This is a personal project that allows users to send letters to themselves or to other people in the future through email. It is built using Next.js and Mongoose.
+Installation
 
-First, run the development server:
+To install the project, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+    Clone the repository to your local machine.
+    Install the dependencies by running npm install or yarn install.
+    Create a .env.local file in the root of the project and set the following environment variables:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+makefile
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+MONGO_URI=<your_mongodb_uri>
+JWT_SECRET=<your_jwt_secret>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+    Start the development server by running npm run dev or yarn dev.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Technologies Used
 
-## Learn More
+    Next.js
+    Mongoose
+    Nodemailer
+    React
+    Scss
+    typescript
+    
+Functionality
 
-To learn more about Next.js, take a look at the following resources:
+The project allows users to create letters that are stored in a MongoDB database. Users can set a delivery date for the letter, which can be either in the future or the past. When the delivery date is reached, the letter is sent to the recipient's email address. If the recipient is the sender, the letter is stored in the user's account and can be viewed in the "Sent Letters" section.
+Routes
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project has the following routes:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    /: Home page with a form to create a new letter.
+    /login: Login page for users to log in to their account.
+    /signup: Signup page for new users to create an account.
+    /letter/:id: Page to view a single letter by its ID.
 
-## Deploy on Vercel
+API Endpoints
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project has the following API endpoints:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    POST /api/auth/signup: Creates a new user account.
+    POST /api/auth/login: Logs in a user and returns a JWT token.
+    POST /api/letters: Creates a new letter and stores it in the database.
+    GET /api/letters: Returns a list of all letters for the current user.
+    GET /api/letters/sent: Returns a list of all letters sent by the current user.
+    GET /api/letters/received: Returns a list of all letters received by the current user.
+    GET /api/letters/:id: Returns a single letter by its ID.
+    PUT /api/letters/:id: Updates a letter by its ID.
+    DELETE /api/letters/:id: Deletes a letter by its ID.
+
+License
+
+This project is licensed under the MIT License.

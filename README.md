@@ -9,13 +9,13 @@ To install the project, follow these steps:
     Install the dependencies by running npm install or yarn install.
     Create a .env.local file in the root of the project and set the following environment variables:
 
-`
+```
 MONGO_URI=<your_mongodb_uri>
 JWT_SECRET=<your_jwt_secret>
 
     Start the development server by running npm run dev or yarn dev.
 
-`
+```
 
 ## Technologies Used
 
@@ -33,24 +33,24 @@ Routes
 
 ## The project has the following routes:
 
-    /: Home page with a form to create a new letter.
-    /login: Login page for users to log in to their account.
-    /signup: Signup page for new users to create an account.
-    /letter/:id: Page to view a single letter by its ID.
+    -/: Home page with a form to create a new letter.
+    c/login: Login page for users to log in to their account.
+    -/signup: Signup page for new users to create an account.
+    -/letter/:id: Page to view a single letter by its ID.
 
 ## API Endpoints
 
 The project has the following API endpoints:
 
-    POST /api/auth/signup: Creates a new user account.
-    POST /api/auth/login: Logs in a user and returns a JWT token.
-    POST /api/letters: Creates a new letter and stores it in the database.
-    GET /api/letters: Returns a list of all letters for the current user.
-    GET /api/letters/sent: Returns a list of all letters sent by the current user.
-    GET /api/letters/received: Returns a list of all letters received by the current user.
-    GET /api/letters/:id: Returns a single letter by its ID.
-    PUT /api/letters/:id: Updates a letter by its ID.
-    DELETE /api/letters/:id: Deletes a letter by its ID.
+    -POST /api/auth/signup: Creates a new user account.
+    -POST /api/auth/login: Logs in a user and returns a JWT token.
+    -POST /api/letters: Creates a new letter and stores it in the database.
+    -GET /api/letters: Returns a list of all letters for the current user.
+    -GET /api/letters/sent: Returns a list of all letters sent by the current user.
+    -GET /api/letters/received: Returns a list of all letters received by the current user.
+    -GET /api/letters/:id: Returns a single letter by its ID.
+    -PUT /api/letters/:id: Updates a letter by its ID.
+    -DELETE /api/letters/:id: Deletes a letter by its ID.
 
 ## License
 

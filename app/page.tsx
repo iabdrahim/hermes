@@ -53,47 +53,57 @@ export default function LetterForm() {
     console.log(data);
   };
   return (
-    <form action="" onSubmit={(e) => e.preventDefault()}>
-      <ul>
-        {data
-          ? data.data?.map((l: any) => (
-              <li key={l._id}>
-                {l.content}- <span>{getDate(l.Date)}</span>
-                <button onClick={(e) => HandleDelete(l._id)}>delete</button>
-              </li>
-            ))
-          : "loading"}
-      </ul>
-      <input
-        type="text"
-        name="title"
-        value={title}
-        onChange={(e) => setT(e.target.value)}
-      />
-      <textarea
-        id=""
-        name="letter"
-        value={content}
-        onChange={(e) => setC(e.target.value)}
-      ></textarea>
-      <input
-        type="text"
-        placeholder="email"
-        name="email"
-        value={email}
-        onChange={(e) => setM(e.target.value)}
-      />
+    <>
+      <form action="" onSubmit={(e) => e.preventDefault()}>
+        <div className="container">
+          <textarea
+            id=""
+            name="letter"
+            value={content}
+            placeholder={"enter a good letter"}
+            onChange={(e) => setC(e.target.value)}
+          ></textarea>
+        </div>
+        <section>
+          <input
+            type="text"
+            name="title"
+            value={title}
+            placeholder={"enter a good title"}
+            onChange={(e) => setT(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="email"
+            name="email"
+            value={email}
+            onChange={(e) => setM(e.target.value)}
+          />
 
-      <input
-        type="date"
-        placeholder="date"
-        name=""
-        value={date}
-        onChange={(e) => setD(e.target.value)}
-      />
-      <button type="submit" onClick={handleSubmit}>
-        Send
-      </button>
-    </form>
+          <input
+            type="date"
+            placeholder="date"
+            name=""
+            value={date}
+            onChange={(e) => setD(e.target.value)}
+          />
+          <button type="submit" onClick={handleSubmit}>
+            Send
+          </button>
+        </section>
+      </form>
+      <main className="ltrs">
+        <ul>
+          {data
+            ? data.data?.map((l: any) => (
+                <li key={l._id}>
+                  {l.content}- <span>{getDate(l.Date)}</span>
+                  <button onClick={(e) => HandleDelete(l._id)}>delete</button>
+                </li>
+              ))
+            : "loading"}
+        </ul>
+      </main>
+    </>
   );
 }
